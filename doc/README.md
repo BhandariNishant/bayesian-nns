@@ -9,6 +9,10 @@
 3. <a href="https://numpy.org/">`numpy` library</a>
 4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
+### Model Architecture:
+
+Input -> Feed-Forward -> ReLU -> Feed-Forward -> Sigmoid <br>
+(m, 2) -> (2, 4) -> (m, 4) -> (4, 1) -> (m, 1)
 
 ### Who did what:
 
@@ -59,7 +63,7 @@ x += torch.rand((num_samples, 2)) / scale  # add some noise at the edges of each
 #### scale = 2 <br>
 | Data | Predictions numpy | Predictions pyro |
 :---: | :---------: | :-: |
-| ![noise2data](../results/numpy_hmc/data_noisy_8.png) | ![noise2predsnumpy](../results/numpy_hmc/preds_noisy_8.png) | ![noise2predspyro](../results/pyro_hmc/scale_2/predictions.png) |
+| ![noise2data](../results/numpy_hmc/data_noisy_2.png) | ![noise2predsnumpy](../results/numpy_hmc/preds_noisy_2.png) | ![noise2predspyro](../results/pyro_hmc/scale_2/predictions.png) |
 
 | Learning Graph numpy | Learning Graph pyro |
 | :-: | :-: |
