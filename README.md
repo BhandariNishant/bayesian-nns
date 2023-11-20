@@ -15,13 +15,13 @@ In numpy, the prior must be hard-coded at all places <br>
 ```
 init = np.random.npr.normal(np.zeros(total_params), np.ones(total_params), total_params)
 ```
-In Pyro, <br>
+In Pyro, the prior can be easily changed by just changing the dist.Normal <br>
 ```
-code
+ weights.append(pyro.sample(f'weight_0', dist.Normal(torch.zeros(input_size, output_size), torch.ones(input_size, output_size))))
 ```
 ### (ease-of-use) Using the actual Hamiltonian Monte Carlo algorithm (<u>PyRo</u>/Numpy)
 In numpy, the code is 100+ lines <br>
-In Pyro, the code is 3 lines <br>
+In PyRo, the code is 3 lines <br>
 ```
 hmc_kernel = HMC(model, step_size=step_size, trajectory_length=traj_len)
 mcmc_run = MCMC(hmc_kernel, num_samples=num_samples, warmup_steps=warmup_steps)
@@ -29,8 +29,18 @@ mcmc_run.run(data, input_size, hidden_sizes, output_size)
 ```
 <br>
 
+<<<<<<< Updated upstream
 ### (ease-of-use) Changing Model architecture (<u>Pyro</u>/Numpy)
 In numpy, the architecture must be hard-coded and is awkward to change
+=======
+<<<<<<< HEAD
+### (ease-of-use) Changing Model architecture (<b>PyRo<b>)
+In Numpy, the architecture must be hard-coded and is awkward to change
+=======
+### (ease-of-use) Changing Model architecture (<u>Pyro</u>/Numpy)
+In numpy, the architecture must be hard-coded and is awkward to change
+>>>>>>> 1ab7809d588cf9157150e35ebdad0d98b6d87717
+>>>>>>> Stashed changes
 ```
 def model(params, data : NoisyXOR):
 '''
@@ -48,7 +58,7 @@ prob = prob_plus + prob_neg
 neg_log_prob = -np.sum(np.log(prob + 1e-10))
 return neg_log_prob
 ```
-In Pyro,
+In Pyro, the layer dimensions can be changed by changing the size as well as additional layers can be easily added by appending to hidden_sizes
 ```
 input_size = 2
 hidden_sizes = [4]  # Specify the sizes of hidden layers
@@ -64,7 +74,7 @@ plt.legend()
 ```
 In Pyro, we had to make artificial changes and sample first evaluate later to plot
 ```
-code
+for i in range (num_samples):
 ```
 
 ### (reliability) Default implementation vs Unsafe Self Implementation (<u>Pyro</u>/Numpy)
