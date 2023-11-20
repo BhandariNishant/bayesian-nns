@@ -9,8 +9,8 @@
 3. <a href="https://numpy.org/">`numpy` library</a>
 4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
-### PoPL aspects: (<u>Underlined</u> library is the better one)
-### (ease-of-use) Defining the prior (<u>PyRo</u>/Numpy)
+### PoPL aspects: (_Underlined_ library is the better one)
+### (ease-of-use) Defining the prior (_Pyro_/Numpy)
 In numpy, the prior must be hard-coded at all places <br>
 ```
 init = np.random.npr.normal(np.zeros(total_params), np.ones(total_params), total_params)
@@ -19,7 +19,7 @@ In Pyro, the prior can be easily changed by just changing the dist.Normal <br>
 ```
  weights.append(pyro.sample(f'weight_0', dist.Normal(torch.zeros(input_size, output_size), torch.ones(input_size, output_size))))
 ```
-### (ease-of-use) Using the actual Hamiltonian Monte Carlo algorithm (<u>PyRo</u>/Numpy)
+### (ease-of-use) Using the actual Hamiltonian Monte Carlo algorithm (_Pyro_/Numpy)
 In numpy, the code is 100+ lines <br>
 In PyRo, the code is 3 lines <br>
 ```
@@ -28,7 +28,7 @@ mcmc_run = MCMC(hmc_kernel, num_samples=num_samples, warmup_steps=warmup_steps)
 mcmc_run.run(data, input_size, hidden_sizes, output_size)
 ```
 
-### (ease-of-use) Changing Model architecture (<u>Pyro</u>/Numpy)
+### (ease-of-use) Changing Model architecture (_Pyro_/Numpy)
 In numpy, the architecture must be hard-coded and is awkward to change
 ```
 def model(params, data : NoisyXOR):
@@ -54,7 +54,7 @@ hidden_sizes = [4]  # Specify the sizes of hidden layers
 output_size = 1
 ```
 
-### (ease-of-use) Plotting results (Pyro/<u>Numpy</u>)
+### (ease-of-use) Plotting results (Pyro/_Numpy_)
 In Numpy, we have access to intermediate configurations of the model easily, few lines of code to plot stuff,
 ```
 plt.plot(val_acc, label='Validation accuracy')
@@ -66,7 +66,7 @@ In Pyro, we had to make artificial changes and sample first evaluate later to pl
 for i in range (num_samples):
 ```
 
-### (reliability) Default implementation vs Unsafe Self Implementation (<u>Pyro</u>/Numpy)
+### (reliability) Default implementation vs Unsafe Self Implementation (_Pyro_/Numpy)
 In Numpy, the sigmoid implementation can lead to overflows
 ```
 def sigmoid(x):
