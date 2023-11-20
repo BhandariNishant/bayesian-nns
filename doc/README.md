@@ -32,7 +32,7 @@ x += torch.rand((num_samples, 2)) / scale  # add some noise at the edges of each
 
 ### Graphs:
 
-Data at scale = 8 vs Predictions at scale = 8<br>
-| Data | Predictions |
-:---: | :---------: |
-| ![noise8data](../results/numpy_hmc/data_noisy_8.png) | ![noise8preds](../results/numpy_hmc/preds_noisy_8.png) |
+#### scale = 8 <br>
+| Data | Predictions | Learning Graph |
+:---: | :---------: | :-: |
+| ![noise8data](../results/numpy_hmc/data_noisy_8.png) | ![noise8preds](../results/numpy_hmc/preds_noisy_8.png) | ![noise8accuracy](../results/numpy_hmc/acc_noisy_8.png) |
