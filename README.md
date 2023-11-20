@@ -9,7 +9,7 @@
 3. <a href="https://numpy.org/">`numpy` library</a>
 4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
-### PoPL aspects: (_Underlined_ library is the better one)
+### PoPL aspects: (_Italicized_ library is the better one)
 ### (ease-of-use) Defining the prior (_Pyro_/Numpy)
 In numpy, the prior must be hard-coded at all places <br>
 ```
