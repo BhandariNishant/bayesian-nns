@@ -75,3 +75,5 @@ In Pyro, all this is taken care of internally<br>
 ```
 Insert bernoulli code here
 ```
+
+#### Note : there is no `/tests` folder because results have been compiled in the `/doc` folder.
