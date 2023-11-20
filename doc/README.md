@@ -7,6 +7,7 @@
 1. <a href="https://github.com/HIPSautograd">`autograd` library</a>
 2. <a href="https://pyro.ai/">the `PyRo` framework</a>
 3. <a href="https://numpy.org/">`numpy` library</a>
+4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
 ### PoPL aspects: (<b>Bold</b> library is the better one)
 1. ease-of-use, <br>
