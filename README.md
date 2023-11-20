@@ -84,6 +84,9 @@ pyro.sample("obs", dist.Bernoulli(logits=output), obs=data.y)
 ```
 
 ### To reproduce results:
+```
+pip install -r requirements.txt
+```
 #### For numpy run - 
 ```
 cd code-orig
