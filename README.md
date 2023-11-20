@@ -9,6 +9,9 @@
 3. <a href="https://numpy.org/">`numpy` library</a>
 4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
+### Problem:
+#### We have used Noisy XOR problem to demonstrate the difference between Pyro and numpy implementations.
+
 ### PoPL aspects: (_Italicized_ library is the better one)
 ### (ease-of-use) Defining the prior (_Pyro_/Numpy)
 In numpy, the prior must be hard-coded at all places <br>
