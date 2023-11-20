@@ -6,7 +6,7 @@ from torch.utils.data.dataset import Dataset
 
 class NoisyXOR(Dataset):
 
-    def __init__(self, num_samples=100):
+    def __init__(self, num_samples=100, scale = 8):
 
         super(NoisyXOR, self).__init__()
 
@@ -21,7 +21,7 @@ class NoisyXOR(Dataset):
         x[x > 0.5] += 0.08  # move the class blocks slightly further from each other
         x += torch.rand(
             (num_samples, 2)
-        ) / 8  # add some noise at the edges of each class block
+        ) / scale  # add some noise at the edges of each class block
 
         self.X = x
         self.y = y

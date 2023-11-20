@@ -13,12 +13,12 @@ from data import NoisyXOR
 
 def evaluate():
 
-    with open('numpy_hmc/weights/params_16_num_samples_1000.pickle', 'rb') as handle:
+    with open('numpy_hmc/weights/params_16_num_samples_1000_noisy_8.pickle', 'rb') as handle:
         weights = pickle.load(handle)
 
     w1, b1, w2, b2 = weight_unpack(weights, hid_size=4)
 
-    data = NoisyXOR(100)
+    data = NoisyXOR(100, scale=8)
 
     logit = np.dot(np.maximum(np.dot(data.X.numpy(), w1) + b1, 0), w2) + b2
     op = sigmoid(logit)
