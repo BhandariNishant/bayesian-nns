@@ -7,6 +7,7 @@
 1. <a href="https://github.com/HIPSautograd">`autograd` library</a>
 2. <a href="https://pyro.ai/">the `PyRo` framework</a>
 3. <a href="https://numpy.org/">`numpy` library</a>
+4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
 ### PoPL aspects: (<b>Bold</b> library is the better one)
 ### (ease-of-use) Defining the prior (<b>PyRo</b>)
@@ -22,7 +23,9 @@ code
 In numpy, the code is 100+ lines <br>
 In Pyro, the code is 3 lines <br>
 ```
-code
+hmc_kernel = HMC(model, step_size=step_size, trajectory_length=traj_len)
+mcmc_run = MCMC(hmc_kernel, num_samples=num_samples, warmup_steps=warmup_steps)
+mcmc_run.run(data, input_size, hidden_sizes, output_size)
 ```
 <br>
 
@@ -47,7 +50,9 @@ return neg_log_prob
 ```
 In Pyro,
 ```
-code
+input_size = 2
+hidden_sizes = [4]  # Specify the sizes of hidden layers
+output_size = 1
 ```
 
 ### (ease-of-use) Plotting results (<b>Numpy</b>)
@@ -73,7 +78,7 @@ def sigmoid(x):
 ```
 In Pyro, all this is taken care of internally<br>
 ```
-Insert bernoulli code here
+pyro.sample("obs", dist.Bernoulli(logits=output), obs=data.y)
 ```
 
 #### Note : there is no `/tests` folder because results have been compiled in the `/doc` folder.
