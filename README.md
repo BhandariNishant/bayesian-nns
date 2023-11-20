@@ -29,18 +29,8 @@ mcmc_run.run(data, input_size, hidden_sizes, output_size)
 ```
 <br>
 
-<<<<<<< Updated upstream
 ### (ease-of-use) Changing Model architecture (<u>Pyro</u>/Numpy)
 In numpy, the architecture must be hard-coded and is awkward to change
-=======
-<<<<<<< HEAD
-### (ease-of-use) Changing Model architecture (<b>PyRo<b>)
-In Numpy, the architecture must be hard-coded and is awkward to change
-=======
-### (ease-of-use) Changing Model architecture (<u>Pyro</u>/Numpy)
-In numpy, the architecture must be hard-coded and is awkward to change
->>>>>>> 1ab7809d588cf9157150e35ebdad0d98b6d87717
->>>>>>> Stashed changes
 ```
 def model(params, data : NoisyXOR):
 '''
