@@ -32,35 +32,35 @@ x += torch.rand((num_samples, 2)) / scale  # add some noise at the edges of each
 #### For pyro,
 | Noise scale (lower => high noise) | (avg. %) Accuracy on test set accross 3 seeds |
 | --------------------------------- | ------------------------------------------- |
-| - | - |
-| - | - |
-| - | - |
+| 8 | 98.6 |
+| 4 | 94.7 |
+| 2 | 82.5 |
 
 ### Graphs:
 
 #### scale = 8 <br>
 | Data | Predictions numpy | Predictions pyro |
 | :---: | :---------: | :-: |
-| ![noise8data](../results/numpy_hmc/data_noisy_8.png) | ![noise8preds](../results/numpy_hmc/preds_noisy_8.png) | - |
+| ![noise8data](../results/numpy_hmc/data_noisy_8.png) | ![noise8predsnumpy](../results/numpy_hmc/preds_noisy_8.png) | ![noise8predspyro](../results/pyro_hmc/scale_8/predictions.png) |
 
 | Learning Graph numpy | Learning Graph pyro |
 | :-: | :-: |
-| ![noise8accuracy](../results/numpy_hmc/acc_noisy_8.png) | - |
+| ![noise8accuracynumpy](../results/numpy_hmc/acc_noisy_8.png) | ![noise8accuracypyro](../results/pyro_hmc/scale_8/accuracy.png) |
 
 #### scale = 4 <br>
 | Data | Predictions numpy | Predictions pyro |
 :---: | :---------: | :-: |
-| ![noise4data](../results/numpy_hmc/data_noisy_4.png) | ![noise4preds](../results/numpy_hmc/preds_noisy_4.png) | - |
+| ![noise4data](../results/numpy_hmc/data_noisy_4.png) | ![noise4predsnumpy](../results/numpy_hmc/preds_noisy_4.png) | ![noise4preds](../results/pyro_hmc/scale_4/predictions.png) |
 
 | Learning Graph numpy | Learning Graph pyro |
 | :-: | :-: |
-| ![noise8accuracy](../results/numpy_hmc/acc_noisy_4.png) | - |
+| ![noise4accuracynumpy](../results/numpy_hmc/acc_noisy_4.png) | ![noise4accuracypyro](../results/pyro_hmc/scale_4/accuracy.png) |
 
 #### scale = 2 <br>
 | Data | Predictions numpy | Predictions pyro |
 :---: | :---------: | :-: |
-| ![noise2data](../results/numpy_hmc/data_noisy_8.png) | ![noise2preds](../results/numpy_hmc/preds_noisy_8.png) | - |
+| ![noise2data](../results/numpy_hmc/data_noisy_8.png) | ![noise2predsnumpy](../results/numpy_hmc/preds_noisy_8.png) | ![noise2predspyro](../results/pyro_hmc/scale_2/predictions.png) |
 
 | Learning Graph numpy | Learning Graph pyro |
 | :-: | :-: |
-| ![noise8accuracy](../results/numpy_hmc/acc_noisy_2.png) | - |
+| ![noise2accuracynumpy](../results/numpy_hmc/acc_noisy_2.png) | ![noise2accuracypyro](../results/pyro_hmc/scale_2/accuracy.png) |
