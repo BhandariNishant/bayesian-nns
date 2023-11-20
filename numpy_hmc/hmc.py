@@ -19,7 +19,7 @@ sys.path.append("..")
 from data import NoisyXOR
 from tqdm import tqdm
 
-np.random.seed(14)
+np.random.seed(1)
 
 def sigmoid(x):
     '''
@@ -163,6 +163,24 @@ def hamiltonian_monte_carlo(data, model=model, n_samples=50, negative_log_prob=n
     plt.legend()
     #ax2.plot(samples[:][-1], label='Final layer bias plot')
     plt.savefig('numpy_hmc/hmc.png')
+    plt.close('all')
+
+    y = data.y.numpy().squeeze()
+    plt.plot(data.X.numpy()[:, 0][y == 1], data.X.numpy()[:, 1][y == 1], 'o', label='+')
+    plt.plot(data.X.numpy()[:, 0][y == 0], data.X.numpy()[:, 1][y == 0], 'x', label='-')
+    plt.savefig('numpy_hmc/data.png')
+    plt.close('all')
+
+    w1, b1, w2, b2 = weight_unpack(samples[-1], hid_size=4)
+    logit = np.dot(np.maximum(np.dot(data.X.numpy(), w1) + b1, 0), w2) + b2
+    op = sigmoid(logit)
+    op[op > 0.5] = 1
+    op[op < 0.5] = 0
+    op = op.squeeze()
+
+    plt.plot(data.X.numpy()[:, 0][op == 1], data.X.numpy()[:, 1][op == 1], 'o', label='+')
+    plt.plot(data.X.numpy()[:, 0][op == 0], data.X.numpy()[:, 1][op == 0], 'x', label='-')
+    plt.savefig('numpy_hmc/preds.png')
     plt.close('all')
 
     return np.array(samples[1:])
