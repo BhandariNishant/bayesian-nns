@@ -81,4 +81,16 @@ In Pyro, all this is taken care of internally<br>
 pyro.sample("obs", dist.Bernoulli(logits=output), obs=data.y)
 ```
 
-#### Note : there is no `/tests` folder because results have been compiled in the `/doc` folder.
+### To reproduce results:
+#### For numpy run - 
+```
+cd code-orig
+python -m numpy_hmc.hmc
+```
+#### For pyro run -
+```
+cd code-orig
+python -m pyro_hmc.experiment
+```
+
+#### Note : there is no `/tests` folder because results have been compiled in the `/doc` folder,there is also no `/code-external` folder because we have mentioned all our references in individual `.py` files.
