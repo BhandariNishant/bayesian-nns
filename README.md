@@ -27,7 +27,6 @@ hmc_kernel = HMC(model, step_size=step_size, trajectory_length=traj_len)
 mcmc_run = MCMC(hmc_kernel, num_samples=num_samples, warmup_steps=warmup_steps)
 mcmc_run.run(data, input_size, hidden_sizes, output_size)
 ```
-<br>
 
 ### (ease-of-use) Changing Model architecture (<u>Pyro</u>/Numpy)
 In numpy, the architecture must be hard-coded and is awkward to change
@@ -92,5 +91,8 @@ python -m numpy_hmc.hmc
 cd code-orig
 python -m pyro_hmc.experiment
 ```
+
+### Possible future directions -
+#### It would be compelling to compare these two paradigms on even more DL algorithms like CNNs and RNNs. Although scaling MCMC to this would be a problem.
 
 #### Note : there is no `/tests` folder because results have been compiled in the `/doc` folder,there is also no `/code-external` folder because we have mentioned all our references in individual `.py` files.
