@@ -9,9 +9,15 @@
 3. <a href="https://numpy.org/">`numpy` library</a>
 4. <a href="https://pytorch.org/">`PyTorch` library</a>
 
+
+### Who did what:
+
+#### Karan worked on the numpy code whereas Nishant worked on the PyRo side of things. We would code together and explain nuances of each library to each other.
+
 ### Reults:
 
 #### We tried out different noise scales to see how tough it can get for the models to fit the data and verify that they are working as expected. Almost same results using both libraries.
+
 #### Noise Code:
 ```
 x += torch.rand((num_samples, 2)) / scale  # add some noise at the edges of each class block
@@ -33,6 +39,28 @@ x += torch.rand((num_samples, 2)) / scale  # add some noise at the edges of each
 ### Graphs:
 
 #### scale = 8 <br>
-| Data | Predictions | Learning Graph |
+| Data | Predictions numpy | Predictions pyro |
+| :---: | :---------: | :-: |
+| ![noise8data](../results/numpy_hmc/data_noisy_8.png) | ![noise8preds](../results/numpy_hmc/preds_noisy_8.png) | - |
+
+| Learning Graph numpy | Learning Graph pyro |
+| :-: | :-: |
+| ![noise8accuracy](../results/numpy_hmc/acc_noisy_8.png) | - |
+
+#### scale = 4 <br>
+| Data | Predictions numpy | Predictions pyro |
 :---: | :---------: | :-: |
-| ![noise8data](../results/numpy_hmc/data_noisy_8.png) | ![noise8preds](../results/numpy_hmc/preds_noisy_8.png) | ![noise8accuracy](../results/numpy_hmc/acc_noisy_8.png) |
+| ![noise4data](../results/numpy_hmc/data_noisy_4.png) | ![noise4preds](../results/numpy_hmc/preds_noisy_4.png) | - |
+
+| Learning Graph numpy | Learning Graph pyro |
+| :-: | :-: |
+| ![noise8accuracy](../results/numpy_hmc/acc_noisy_4.png) | - |
+
+#### scale = 2 <br>
+| Data | Predictions numpy | Predictions pyro |
+:---: | :---------: | :-: |
+| ![noise2data](../results/numpy_hmc/data_noisy_8.png) | ![noise2preds](../results/numpy_hmc/preds_noisy_8.png) | - |
+
+| Learning Graph numpy | Learning Graph pyro |
+| :-: | :-: |
+| ![noise8accuracy](../results/numpy_hmc/acc_noisy_2.png) | - |
